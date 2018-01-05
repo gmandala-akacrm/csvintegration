@@ -78,10 +78,6 @@ private class akaTestDataRowTest {
 
 		System.assertEquals(STRING_STRING, testRow.getStringVal(STRING_FIELD));
 		System.assertEquals(true, testRow.isValid());
-		List<akaTestDataRow> rowsToTest = new List<akaTestDataRow>{
-				testRow
-		};
-
 
 	}
 
