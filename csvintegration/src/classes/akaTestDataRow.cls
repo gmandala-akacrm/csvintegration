@@ -16,7 +16,7 @@ public class akaTestDataRow extends akaDataRow {
 		return Datetime.valueOf(valueToParse);
 	}
 	public override Date parseDate(String valueToParse) {
-		return Date.parse(valueToParse);
+		return Date.valueOf(valueToParse);
 	}
 
 }

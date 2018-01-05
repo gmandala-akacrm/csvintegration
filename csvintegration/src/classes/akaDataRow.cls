@@ -6,13 +6,13 @@
 
 public abstract class akaDataRow {
 
-	private List<string> headerFields;
-	private List<string> dataRow;
-	private Map<string, Object> valMap;
+	protected List<string> headerFields;
+	protected List<string> dataRow;
+	protected Map<string, Object> valMap;
 
-	private string rowText { get; set; }
-	private string fileName { get; set; }
-	private integer rowNumber { get; set; }
+	protected string rowText { get; set; }
+	protected string fileName { get; set; }
+	protected integer rowNumber { get; set; }
 
 	public akaDataRow(List<String> headerFields, String rowText, String fileName, Integer rowNumber) {
 		this.headerFields = headerFields;
@@ -33,7 +33,7 @@ public abstract class akaDataRow {
 	}
 
 
-	public virtual void populateDataFields() {
+	protected virtual void populateDataFields() {
 		valMap = new Map<string, Object>();
 
 
