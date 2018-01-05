@@ -1,5 +1,5 @@
 /**
- * Created by George Mandala on 1/4/2018.
+ * Created by akaCRM George Mandala on 1/4/2018.
  * This class has the base methods for creating a data row.  The full implementation of the data row class
  * requires that implementation of parseDate,parseDateTime, and parseDecimal
  */

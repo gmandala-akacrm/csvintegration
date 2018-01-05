@@ -10,7 +10,7 @@ public without sharing class akaTestDataRowIterator extends akaDataRowIterator i
 
 	public akaTestDataRow next() {
 		string rowText = this.fileData.substringBefore('\n');
-		this.fileData = this.filedata.substringAfter('\n');
+		this.fileData = this.fileData.substringAfter('\n');
 
 		rowNumber++;
 		return new akaTestDataRow(this.headerRow, rowText, fileName, rowNumber);
