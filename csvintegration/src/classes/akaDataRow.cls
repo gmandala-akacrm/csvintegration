@@ -78,9 +78,12 @@ public abstract class akaDataRow {
 	}
 
 	public String getStringVal(string fieldName) {
-
-		String retVal = String.valueOf(valMap.get(formatHeader(fieldName)));
-		return this.parseString(retVal);
+		try {
+			String retVal = String.valueOf(valMap.get(formatHeader(fieldName)));
+			return this.parseString(retVal);
+		} catch (Exception e) {
+			return '';
+		}
 
 	}
 
