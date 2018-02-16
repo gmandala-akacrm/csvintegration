@@ -22,6 +22,14 @@ public abstract class akaDataRow {
 
 	}
 
+	public virtual string getCsvHeaderString() {
+		return String.join(headerFields, ',');
+	}
+
+	public virtual string getTsvHeaderString() {
+		return String.join(headerFields, '\t');
+	}
+
 	public virtual void populateCsvFields() {
 		dataRow = akaCSVParser.getCSVCols(rowText);
 		populateDataFields();
@@ -73,11 +81,12 @@ public abstract class akaDataRow {
 	}
 
 	public virtual Boolean isValid() {
-		return String.isNotBlank(rowText);
+		return String.isNotBlank(rowText != null ? rowText.trim() : rowText);
 
 	}
 
 	public String getStringVal(string fieldName) {
+
 		try {
 			String retVal = String.valueOf(valMap.get(formatHeader(fieldName)));
 			return this.parseString(retVal);
@@ -123,6 +132,10 @@ public abstract class akaDataRow {
 
 	public virtual String parseString(String valueToParse) {
 		return valueToParse != null ? valueToParse.trim() : valueToParse;
+	}
+
+	public string getRowText() {
+		return this.rowText;
 	}
 
 

@@ -78,6 +78,12 @@ private class akaTestDataRowTest {
 
 		System.assertEquals(STRING_STRING, testRow.getStringVal(STRING_FIELD));
 		System.assertEquals(true, testRow.isValid());
+		List<akaTestDataRow> rowsToTest = new List<akaTestDataRow>{
+				testRow
+		};
+
+		System.assertEquals('1,2,3,4', testRow.getCsvHeaderString());
+
 
 	}
 
@@ -93,6 +99,7 @@ private class akaTestDataRowTest {
 		System.assertEquals(testDate, testRow.getDateVal(DATE_FIELD));
 		System.assertEquals(testDecimal, testRow.getDecimalVal(DECIMAL_FIELD));
 		System.assertEquals(STRING_STRING, testRow.getStringVal(STRING_FIELD));
+		System.assertEquals('1\t2\t3\t4', testRow.getTsvHeaderString());
 
 
 	}
